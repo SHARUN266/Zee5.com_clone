@@ -1,0 +1,25 @@
+{
+  "name": "Zee5.com_Clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rohit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniyal4engg/Zee5.com_Clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniyal4engg/Zee5.com_Clone/issues"
+  },
+  "homepage": "https://github.com/daniyal4engg/Zee5.com_Clone#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9",
+    "nodemon": "^2.0.15"
+  }
+}
