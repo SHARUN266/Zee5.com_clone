@@ -4,12 +4,12 @@ const connect = require("./configs/db")
  
 const userController = require("./controller/user.controller")
 // const passport = require("./configs/google-oauth")
- 
+ const movieController=require("./controller/movie.controller")
 const app = express()
 const { register, login } = require("./controller/auth.controller")
 app.use(express.json())
 app.use("/users", userController)
-
+app.use("/movies",movieController)
 
 
 app.post("/register", register)
