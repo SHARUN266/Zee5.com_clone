@@ -11,15 +11,19 @@ router.post("",async(req,res)=>{
       return res.status(200).send({movie})
     }
     catch(err){
-      return res.send("Error occured")
+      return res.send({message:err.message})
     }
 })
   
 
 router.get("",async(req,res)=>{
-    const movies=await Movie.find().lean().exec()
+    try {
+      const movies=await Movie.find().lean().exec()
 
     return res.status(201).send({movies});
+    } catch (err) {
+      return res.send({message:err.message})
+    }
 })
 
 
