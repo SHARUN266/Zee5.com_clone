@@ -6,13 +6,13 @@ let register = async () => {
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       password: document.getElementById("pass").value,
-      username: document.getElementById("username").value,
-      mobile: document.getElementById("mobile").value,
-      description: document.getElementById("description").value,
+      gender: document.getElementById("gender").value,
+      age: document.getElementById("age").value,
+      
     };
     register_data = JSON.stringify(register_data);
     let res = await fetch(
-      "https://masai-api-mocker.herokuapp.com/auth/register",
+      "http://localhost:5000/register",
       {
         method: "POST",
         body: register_data,
@@ -22,60 +22,65 @@ let register = async () => {
       }
     );
     let data = await res.json();
-    console.log("data", data);
-    goToLogin_page(data);
+    window.location.href="auth_login.html"
+    // console.log("data", data);
+    // goToLogin_page(data);
   } catch (err) {
     console.log("err", err);
     // let a = "hello";
   }
 };
+
 let Login = async () => {
   try {
     let login_data = {
-      username: document.getElementById("login_username").value,
+      email: document.getElementById("login_username").value,
       password: document.getElementById("login_password").value,
     };
     let login_data_json = JSON.stringify(login_data);
-    let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+    let res = await fetch("http://localhost:5000/login", {
       method: "POST",
       body: login_data_json,
       headers: {
         "content-Type": "application/json",
       },
     });
-    let data = await res.json();
-    console.log("data", data);
-    getUser(login_data.username, data.token);
-  } catch (err) {
-    console.log("err", err);
-  }
-};
-let getUser = async (username, token) => {
-  try {
-    let res = await fetch(
-      `https://masai-api-mocker.herokuapp.com/user/${username}`,
-      {
-        headers: {
-          "content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    let data = await res.json();
-    console.log("data", data);
-    SuccessAndGo(data, username);
+    let data2 = await res.json();
+    window.location.href="index.html"
+    // console.log("data", data2);
+    
+    // getUser(login_data.email, data.token);
   } catch (err) {
     console.log("err", err);
   }
 };
 
-let SuccessAndGo = (data, username) => {
-  if (username === data.username) {
-    window.location.href = "index.html";
-  } else {
-    alert("Invalid Username / Password");
-  }
-};
+// let getUser = async (email, token) => {
+//   try {
+//     let res = await fetch(
+//       `https://localhost:5000/register`,
+//       {
+//         headers: {
+//           "content-Type": "application/json",
+//           Authorization: `Bearer ${token}`,
+//         },
+//       }
+//     );
+//     let data3 = await res.json();
+//     console.log("data", data3);
+//     // SuccessAndGo(data, email);
+//   } catch (err) {
+//     console.log("err", err);
+//   }
+// };
+
+// let SuccessAndGo = (data, email) => {
+//   if (email === data.email) {
+//     window.location.href = "index.html";
+//   } else {
+//     alert("Invalid email/Password");
+//   }
+// };
 
 // html input action by click event
 document.querySelector("#name").addEventListener("keypress", (e) => {
@@ -92,21 +97,21 @@ document.querySelector("#email").addEventListener("keypress", (e) => {
 //
 document.querySelector("#pass").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    document.querySelector("#username").style.display = "block";
+    document.querySelector("#gender").style.display = "block";
   }
 });
 //
-document.querySelector("#username").addEventListener("keypress", (e) => {
+document.querySelector("#gender").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    document.querySelector("#mobile").style.display = "block";
+    document.querySelector("#age").style.display = "block";
   }
 });
-//
-document.querySelector("#mobile").addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    document.querySelector("#description").style.display = "block";
-  }
-});
+// //
+// document.querySelector("#mobile").addEventListener("keypress", (e) => {
+//   if (e.key === "Enter") {
+//     document.querySelector("#description").style.display = "block";
+//   }
+// });
 
 //
 let goToLogin_page = (data) => {
