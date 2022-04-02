@@ -30,7 +30,7 @@
             alt=""
           />
         </div>
-        <div><a href="home.html">Home</a></div>
+        <div><a href="index.html">Home</a></div>
         <div class="dropdown">
           <button class="dropbtn">TV Show</button>
           <div class="dropdown-content">
@@ -591,7 +591,7 @@
         <a href="search.html">  <ion-icon name="search-sharp" > </ion-icon></a>
         <div class="insidenav2"><ion-icon name="language"></ion-icon></div>
 
-        <div id="login"><a href="./auth_login.html">LOGIN</a></div>
+        <div id="login"><a href="auth_login.html">LOGIN</a></div>
 
         <div id="buyplan">
           <i class="fas fa-crown"></i><a href="">BUY PLAN</a>
@@ -805,48 +805,56 @@
   import { makeapicall, appendpicture } from "./scripts/movies.js";
 
   let images_data1 = await makeapicall(
-    "https://api.themoviedb.org/4/list/1?api_key=3bc06deaaeabe85858ae8d32c24cae1f"
+    // "https://api.themoviedb.org/4/list/1?api_key=3bc06deaaeabe85858ae8d32c24cae1f"
+    "http://localhost:5000/movies"
   );
   let parent1 = document.getElementById("slidemovie1");
   appendpicture(images_data1, parent1);
 
   let images_data2 = await makeapicall(
-    "https://api.themoviedb.org/3/trending/movie/week?api_key=3bc06deaaeabe85858ae8d32c24cae1f"
+    // "https://api.themoviedb.org/3/trending/movie/week?api_key=3bc06deaaeabe85858ae8d32c24cae1f"
+    "http://localhost:5000/movies"
   );
   let parent2 = document.getElementById("slidemovie2");
   appendpicture(images_data2, parent2);
 
   let images_data3 = await makeapicall(
-    "https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=hi&page=1"
+    // "https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=hi&page=1"
+    "http://localhost:5000/movies"
   );
   let parent3 = document.getElementById("slidemovie3");
   appendpicture(images_data3, parent3);
 
   let images_data4 = await makeapicall(
-    "https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    // "https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    "http://localhost:5000/movies"
   );
   let parent4 = document.getElementById("slidemovie4");
   appendpicture(images_data4, parent4);
 
   let images_data5 = await makeapicall(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    // "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    "http://localhost:5000/movies"
   );
   let parent5 = document.getElementById("slidemovie5");
   appendpicture(images_data5, parent5);
 
   let images_data6 = await makeapicall(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    // "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    "http://localhost:5000/movies"
   );
   let parent6 = document.getElementById("slidemovie6");
   appendpicture(images_data6, parent6);
 
   let images_data7 = await makeapicall(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    // "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    "http://localhost:5000/movies"
   );
   let parent7 = document.getElementById("slidemovie7");
   appendpicture(images_data7, parent7);
   let images_data8 = await makeapicall(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    // "https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1"
+    "http://localhost:5000/movies"
   );
   let parent8 = document.getElementById("slidemovie8");
   appendpicture(images_data8, parent8);

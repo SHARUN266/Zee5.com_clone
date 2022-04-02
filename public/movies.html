@@ -19,7 +19,7 @@
     <div id="navbar">
         <div id="nav1" onclick="myHome()">
             <div><img src="https://www.zee5.com/images/ZEE5_logo.svg?ver=2.50.94" alt=""></div>
-            <div><a href="home.html">Home</a></div>
+            <div><a href="index.html">Home</a></div>
             <div class="dropdown"><button class="dropbtn">TV Show</button>
             <div class="dropdown-content">
                 <div id="div2">
@@ -383,29 +383,29 @@ let image = document.createElement("img");
 
 import { makeapicall, appendpicture } from "./scripts/movies.js";
 
-    let images_data1 = await makeapicall("https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1")
+    let images_data1 = await makeapicall("http://localhost:5000/movies")
     let parent1 = document.getElementById("slidemovie1")
     appendpicture(images_data1, parent1)
 
-    let images_data2 = await makeapicall("https://api.themoviedb.org/4/list/1?api_key=3bc06deaaeabe85858ae8d32c24cae1f")
+    let images_data2 = await makeapicall("http://localhost:5000/movies")
     let parent2 = document.getElementById("slidemovie2")
     appendpicture(images_data2, parent2)
 
 
-    let images_data3 = await makeapicall("https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=hi&page=1")
+    let images_data3 = await makeapicall("http://localhost:5000/movies")
     let parent3 = document.getElementById("slidemovie3")
     appendpicture(images_data3, parent3)
 
 
-    let images_data4 = await makeapicall("https://api.themoviedb.org/3/tv/popular?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1")
+    let images_data4 = await makeapicall("http://localhost:5000/movies")
     let parent4 = document.getElementById("slidemovie4")
     appendpicture(images_data4, parent4)
 
-    let images_data5 = await makeapicall("https://api.themoviedb.org/3/movie/upcoming?api_key=3bc06deaaeabe85858ae8d32c24cae1f&language=en-US&page=1")
+    let images_data5 = await makeapicall("http://localhost:5000/movies")
     let parent5 = document.getElementById("slidemovie5")
     appendpicture(images_data5, parent5)
 
-    let images_data6 = await makeapicall("https://api.themoviedb.org/3/trending/movie/week?api_key=3bc06deaaeabe85858ae8d32c24cae1f")
+    let images_data6 = await makeapicall("http://localhost:5000/movies")
     let parent6 = document.getElementById("slidemovie6")
     appendpicture(images_data6, parent6)
 
