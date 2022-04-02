@@ -2,7 +2,8 @@ async function makeapicall(url) {
     try {
         let res = await fetch(url)
         let data = await res.json()
-        return data.results
+      console.log(data.movies)
+        return data.movies
 
     }
     catch (error) {
@@ -11,12 +12,18 @@ async function makeapicall(url) {
 }
 
 function appendpicture(data, parent) {
-    console.log("data:",data)
+    // console.log("data:",data)
+    // console.log(data)
+    // console.log("rohit")
+    
     data.forEach((element) => {
         let div = document.createElement("div")
          
         let image = document.createElement("img")
         image.src = `https://image.tmdb.org/t/p/w500/${element.poster_path}`;
+
+        let imdb = document.createElement("p")
+        imdb.textContent=element.imdb
           
         let title = document.createElement("p")
         if(element.original_name){
@@ -30,7 +37,7 @@ function appendpicture(data, parent) {
         button.textContent = "WATCH"
         button.style = "white";
 
-        div.append(image, title, button)
+        div.append(image, title,imdb, button)
         div.onclick = () => {
             var arr = []
             arr.push(element)

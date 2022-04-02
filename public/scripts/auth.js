@@ -1,17 +1,4 @@
-// website
-// https://github.com/masai-school/api-mocker/wiki/Authentication-API
-
-//  main  api link is
-//   https://masai-api-mocker.herokuapp.com
-
-//   register api link
-// https://masai-api-mocker.herokuapp.com/auth/register
-
-// login api link
-//  https://masai-api-mocker.herokuapp.com/auth/login
-
-// get req
-// https://masai-api-mocker.herokuapp.com/user/${username}
+ 
 
 let register = async () => {
   try {
